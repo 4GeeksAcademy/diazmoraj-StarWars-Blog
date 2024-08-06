@@ -3,32 +3,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			characters: [],
 			planets: [],
-			starships: []
+			starships: [],
+			characterDetail: {},
+			planetDetail: {},
+			starshipDetail: {},
+			favorites: {}
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
-			loadSomeData: () => {
-				/**
-					fetch().then().then(data => setStore({ "foo": data.bar }))
-				*/
-			},
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
-			},
 			getCharacters: () => {
 				const store = getStore()
 				const swapiURL = "https://www.swapi.tech/api/"
@@ -57,12 +39,59 @@ const getState = ({ getStore, getActions, setStore }) => {
 				const store = getStore()
 				const swapiURL = "https://www.swapi.tech/api/"
 
-				fetch(swapiURL + "/planets/")
+				fetch(swapiURL + "/starships/")
 					.then((response) => response.json())
 					.then((data) => {
 						setStore({ starships: data.results })
 					})
 					.catch(() => { })
+			},
+
+			getCharacterDetail: (id) => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + `/people/${id}`)
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ characterDetail: data.results })
+					})
+					.catch(() => { })
+			},
+
+			getPlanetDetail: (id) => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + `/planets/${id}`)
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ planetDetail: data.results })
+					})
+					.catch(() => { })
+			},
+
+			getStarshipDetail: (id) => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + `/starships/${id}`)
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ starshipDetail: data.results })
+					})
+					.catch(() => { })
+			},
+
+			favorites: (Item) => {
+				let store = getStore();
+				setStore({...store, favorites:[...store.favorites, Item]});
+			},
+
+			delFavorite: (Item) => {
+				const store = getStore();
+				const updateFavorite = store.favorites.filter((favo) => favo !== Item);
+				setStore({favorites:updateFavorite});
 			}
 		}
 	};

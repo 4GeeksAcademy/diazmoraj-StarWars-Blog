@@ -2,7 +2,7 @@ import React, {useState, useEffect, useContext} from "react";
 import {Context} from  "../store/appContext"
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
-import Card from "../component/Card";
+import CardCharacter from "../component/CardCharacter";
 
 export const Home = () => {
 
@@ -19,7 +19,7 @@ export const Home = () => {
 					{
 						store.characters.map((character, index, array) => {
 							return (
-								<Card 
+								<CardCharacter 
 									nombre={character.name} 
 									key={index}/>
 							)

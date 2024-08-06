@@ -1,10 +1,10 @@
 import React, {useContext} from "react";
-import {Contex} from "../store/appContext"
+import {Context} from "../store/appContext"
 import { Link } from "react-router-dom";
 import "../../styles/navbar.css"
 
 export const Navbar = () => {
-	const {store, actions} = useContext(Contex);
+	const {store, actions} = useContext(Context);
 
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
@@ -38,7 +38,7 @@ export const Navbar = () => {
 											{Item.name}
 											<i 
 												className="bi bi-trash-fill borrar-favorito"
-												onClick={() => actions.deleteFavorites(Item)}
+												onClick={() => actions.delFavorite(Item)}
 											></i>
 										</a>
 									</li>
