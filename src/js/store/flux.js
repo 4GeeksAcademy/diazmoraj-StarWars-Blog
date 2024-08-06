@@ -1,18 +1,9 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			demo: [
-				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
-				},
-				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
-				}
-			]
+			characters: [],
+			planets: [],
+			starships: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,6 +28,41 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
+			},
+			getCharacters: () => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + "/people/")
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({characters: data.results})
+					})
+					.catch(() => { })
+			},
+
+			getPlanets: () => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + "/planets/")
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ planets: data.results })
+					})
+					.catch(() => { })
+			},
+
+			getStarships: () => {
+				const store = getStore()
+				const swapiURL = "https://www.swapi.tech/api/"
+
+				fetch(swapiURL + "/planets/")
+					.then((response) => response.json())
+					.then((data) => {
+						setStore({ starships: data.results })
+					})
+					.catch(() => { })
 			}
 		}
 	};
