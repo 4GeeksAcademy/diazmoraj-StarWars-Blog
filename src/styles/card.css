@@ -1,0 +1,27 @@
+.neon-text{
+    color: rgb(98, 0, 255);
+    text-shadow: 0 0 5px #0ff;
+    font-weight: bold;
+    text-align: center;
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.info-card{
+    border: 2px solid rgb(130, 32, 168);
+    border-radius: 10px;
+    margin: 5px 0;
+    box-shadow: 0 0 10px rgb(0, 255, 255);
+    background-color: grey;
+}
+
+.card{
+    margin: 10px;
+    background-color: grey;
+}
+
+.img-view{
+    margin-top: 5px;
+    border-radius: 5px;
+}
