@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			planets: [],
 			starships: [],
-			characterDetail: [],
+			characterDetail: {},
 			planetDetail: [],
 			starshipDetail: [],
 			favorites: []
@@ -13,7 +13,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			// Use getActions to call a function within a fuction
 			getCharacters: () => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/people/")
 					.then((response) => response.json())
@@ -25,7 +25,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanets: () => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/planets/")
 					.then((response) => response.json())
@@ -37,7 +37,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getStarships: () => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/starships/")
 					.then((response) => response.json())
@@ -49,7 +49,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getCharacterDetail: (id) => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + `/people/${id}`)
 					.then((response) => response.json())
@@ -61,7 +61,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getPlanetDetail: (id) => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + `/planets/${id}`)
 					.then((response) => response.json())
@@ -73,7 +73,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			getStarshipDetail: (id) => {
 				const store = getStore()
-				const swapiURL = "https://www.swapi.tech/api/"
+				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + `/starships/${id}`)
 					.then((response) => response.json())

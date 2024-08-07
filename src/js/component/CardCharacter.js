@@ -8,18 +8,17 @@ const CardCharacter = ({nombre, id}) => {
     const handleFavorite = (item) => {
         actions.favorites(item);
     }
-    console.log(store.characters)
     return(
         <div className="card col-6" style={{ width: "18rem" }}>
             <img 
                 src={"https://starwars-visualguide.com/assets/img/characters/" + 
                 id + ".jpg"} 
-                class="card-img-top" alt="..." />
+                className="card-img-top" alt="..." />
             <div className="card-body">
-                <h6 className="card-title">{nombre} {id}</h6>
+                <h6 className="card-title">{nombre}</h6>
                 <div className="icons">
                     <Link 
-                        to={`/characterdetail/${id}`}
+                        to={`/CardCharacterDetail/${id}`}
                         className="btn btn-ouline-primary"
                     >Learn More
                     </Link>

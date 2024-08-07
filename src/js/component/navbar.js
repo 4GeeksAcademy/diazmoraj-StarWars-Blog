@@ -13,7 +13,7 @@ export const Navbar = () => {
 					<span className="navbar-brand mb-0 h1">
 						<img 
 							className="img-navbar"
-							src="https://cdnlogo.com/logo/starwars_31091.html"
+							src="https://styles.redditmedia.com/t5_3257g/styles/communityIcon_zrccbniybxh61.png"
 							alt="logo"
 							style={{width: "100px", objectFit:"cover", height: "50px"}}
 						/>

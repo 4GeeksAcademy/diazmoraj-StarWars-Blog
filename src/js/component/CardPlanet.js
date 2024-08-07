@@ -13,12 +13,12 @@ const CardPlanet = ({nombre, id}) => {
             <img 
                 src={"https://starwars-visualguide.com/assets/img/planets/" + 
                 id + ".jpg"} 
-                class="card-img-top" alt="..." />
+                className="card-img-top" alt="..." />
             <div className="card-body">
                 <h6 className="card-title">{nombre}</h6>
                 <div className="icons">
                     <Link 
-                        to={`/planetdetail/${id}`}
+                        to={`/CardPlanetDetail/${id}`}
                         className="btn btn-ouline-primary"
                     >Learn More
                     </Link>

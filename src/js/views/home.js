@@ -19,7 +19,7 @@ export const Home = () => {
 					<div className="row">
 					<h1>Characters</h1>
 					{
-						store.characters.map((character, index, array) => {
+						store.characters.map((character, index) => {
 							return (
 								<CardCharacter 
 									nombre={character.name} 
