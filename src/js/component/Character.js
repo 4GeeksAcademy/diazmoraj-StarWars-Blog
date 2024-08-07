@@ -4,7 +4,7 @@ import CardCharacter from "./CardCharacter";
 
 const Characters = () => {
     const {store, actions} = useContext(Context);
-
+		console.log(store.characters)
     return (
 		<div className="text-center mt-5">
             <h1>Characters</h1>
@@ -14,10 +14,11 @@ const Characters = () => {
 				<div>
 					<div className="row">
 					{
-						store.characters.map((character, index, array) => {
+						store.characters.map((character, index) => {
 							return (
 								<CardCharacter 
-									nombre={character.name} 
+									nombre={character.name}
+									id={character.uid} 
 									key={index}/>
 							)
 						})

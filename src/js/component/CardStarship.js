@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {Context} from "../store/appContext"
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, useActionData } from "react-router-dom";
 
 const CardStarship = ({nombre, id}) => {

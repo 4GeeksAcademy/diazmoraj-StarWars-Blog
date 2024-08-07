@@ -27,7 +27,7 @@ export const Navbar = () => {
 							role="button"
 							data-bs-toggle="dropdown"
 						>Favorites</a>
-						<ul className="dropdown-menu">
+						<ul className="dropdown-menu">							
 							{store.favorites && store.favorites.map((Item, index) => {
 								return(
 									<li key={index}>

@@ -3,6 +3,8 @@ import {Context} from  "../store/appContext"
 import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.css";
 import CardCharacter from "../component/CardCharacter";
+import CardPlanet from "../component/CardPlanet";
+import CardStarship from "../component/CardStarship";
 
 export const Home = () => {
 
@@ -32,7 +34,7 @@ export const Home = () => {
 					{
 						store.planets.map((planet, index, array) => {
 							return (
-								<Card 
+								<CardPlanet 
 									nombre={planet.name} 
 									key={index}/>
 							)
@@ -45,7 +47,7 @@ export const Home = () => {
 					{
 						store.starships.map((starship, index, array) => {
 							return (
-								<Card 
+								<CardStarship
 									nombre={starship.name} 
 									key={index}/>
 							)

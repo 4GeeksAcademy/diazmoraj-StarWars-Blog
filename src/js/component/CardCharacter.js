@@ -8,6 +8,7 @@ const CardCharacter = ({nombre, id}) => {
     const handleFavorite = (item) => {
         actions.favorites(item);
     }
+    console.log(store.characters)
     return(
         <div className="card col-6" style={{ width: "18rem" }}>
             <img 
@@ -15,7 +16,7 @@ const CardCharacter = ({nombre, id}) => {
                 id + ".jpg"} 
                 class="card-img-top" alt="..." />
             <div className="card-body">
-                <h6 className="card-title">{nombre}</h6>
+                <h6 className="card-title">{nombre} {id}</h6>
                 <div className="icons">
                     <Link 
                         to={`/characterdetail/${id}`}
