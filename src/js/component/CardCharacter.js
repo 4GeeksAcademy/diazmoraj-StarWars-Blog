@@ -1,31 +1,33 @@
-import React, {useContext} from "react";
-import {Context} from "../store/appContext"
+import React, { useContext } from "react";
+import { Context } from "../store/appContext"
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, useActionData } from "react-router-dom";
+import "../../styles/card.css"
 
-const CardCharacter = ({nombre, id}) => {
-    const {store, actions} = useContext(Context);
+const CardCharacter = ({ name, uid }) => {
+    const { store, actions } = useContext(Context);
     const handleFavorite = (item) => {
         actions.favorites(item);
     }
-    return(
-        <div className="card col-6" style={{ width: "18rem" }}>
-            <img 
-                src={"https://starwars-visualguide.com/assets/img/characters/" + 
-                id + ".jpg"} 
-                className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h6 className="card-title">{nombre}</h6>
-                <div className="icons">
-                    <Link 
-                        to={`/CardCharacterDetail/${id}`}
-                        className="btn btn-ouline-primary"
+    return (
+        <div className="card col-6 card-view" style={{ width: "18rem" }}>
+            <img
+                src={"https://starwars-visualguide.com/assets/img/characters/" +
+                    uid + ".jpg"}
+                className="card-img-top img-view" 
+                alt="character" onerror="this.onerror=null; this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg';" />
+            <div className="card-body info-card">
+                <h5 className="card-title neon-text">{name}</h5>
+                <div className="icons d-flex justify-content-between">
+                    <Link
+                        to={`/CardCharacterDetail/${uid}`}
+                        className="btn btn-primary btn-sm"
                     >Learn More
                     </Link>
                     <button
-                    type="button"
-                    className="btn btn-outline-warning"
-                    onClick={() => handleFavorite(nombre)}
+                        type="button"
+                        className="btn btn-outline-warning btn-sm"
+                        onClick={() => handleFavorite(name)}
                     >
                     </button>
                 </div>

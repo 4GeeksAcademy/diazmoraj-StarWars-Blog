@@ -2,30 +2,32 @@ import React, {useContext} from "react";
 import {Context} from "../store/appContext"
 // import "bootstrap-icons/font/bootstrap-icons.css";
 import { Link, useActionData } from "react-router-dom";
+import "../../styles/card.css"
 
-const CardStarship = ({nombre, id}) => {
+const CardStarship = ({name, uid}) => {
     const {store, actions} = useContext(Context);
     const handleFavorite = (item) => {
         actions.favorites(item);
     }
     return(
-        <div className="card col-6" style={{ width: "18rem" }}>
+        <div className="card col-6 card-view" style={{ width: "18rem" }}>
             <img 
                 src={"https://starwars-visualguide.com/assets/img/starships/" + 
-                id + ".jpg"} 
-                className="card-img-top" alt="..." />
-            <div className="card-body">
-                <h6 className="card-title">{nombre}</h6>
-                <div className="icons">
+                uid + ".jpg"} 
+                className="card-img-top img-view" 
+                alt="character" onError={(e) => e.currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"} />
+            <div className="card-body info-card">
+                <h5 className="card-title neon-text">{name}</h5>
+                <div className="icons d-flex justify-content-between">
                     <Link 
-                        to={`/CardStarshipDetail/${id}`}
-                        className="btn btn-ouline-primary"
+                        to={`/CardStarshipDetail/${uid}`}
+                        className="btn btn-primary btn-sm"
                     >Learn More
                     </Link>
                     <button
                     type="button"
-                    className="btn btn-outline-warning"
-                    onClick={() => handleFavorite(nombre)}
+                    className="btn btn-outline-warning btn-sm"
+                    onClick={() => handleFavorite(name)}
                     >
                     </button>
                 </div>

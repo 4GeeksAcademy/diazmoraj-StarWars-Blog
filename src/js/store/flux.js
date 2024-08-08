@@ -4,7 +4,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			characters: [],
 			planets: [],
 			starships: [],
-			characterDetail: {},
+			characterDetail: [],
 			planetDetail: [],
 			starshipDetail: [],
 			favorites: []
@@ -47,11 +47,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(() => { })
 			},
 
-			getCharacterDetail: (id) => {
+			getCharacterDetail: (uid) => {
+				console.log(uid, "hear")
 				const store = getStore()
 				const swapiURL = "https://www.swapi.tech/api"
 
-				fetch(swapiURL + `/people/${id}`)
+				fetch(swapiURL + `/people/${uid}`)
 					.then((response) => response.json())
 					.then((data) => {
 						setStore({ characterDetail: data.results })
@@ -71,11 +72,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(() => { })
 			},
 
-			getStarshipDetail: (id) => {
+			getStarshipDetail: (uid) => {
 				const store = getStore()
 				const swapiURL = "https://www.swapi.tech/api"
 
-				fetch(swapiURL + `/starships/${id}`)
+				fetch(swapiURL + `/starships/${uid}`)
 					.then((response) => response.json())
 					.then((data) => {
 						setStore({ starshipDetail: data.results })

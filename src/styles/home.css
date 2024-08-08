@@ -1,0 +1,28 @@
+.title{
+    font-size: 60px;
+    font-weight: bold;
+    color: transparent;
+    background: linear-gradient(100deg, red, orange, yellow, green, cyan, blue, magenta, red);
+    background-size: 800% 100%;
+    animation: gradientShift 5s linear infinite;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+@keyframes gradientShift{
+    0%{
+        background-position: 0% 0%;
+    }
+
+    100%{
+        background-position: 100% 10%;
+    }
+}
+
+.fond{
+    box-shadow: 0px 0px 10px #ff00f2, 0px 0px 10px #ff00f2 inset;
+    background-color: black;
+    width: 98%;
+    margin: 0 auto;
+    border-radius: 5px
+}

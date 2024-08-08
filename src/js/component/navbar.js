@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {Context} from "../store/appContext"
 import { Link } from "react-router-dom";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import "../../styles/navbar.css"
 
 export const Navbar = () => {
