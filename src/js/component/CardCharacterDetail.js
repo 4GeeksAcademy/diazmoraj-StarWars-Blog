@@ -20,21 +20,21 @@ const CardCharacterDetail = (uid = 12) => {
             <div className="fond">
                 <h1 className="title">Characters</h1>
             </div>
-            <div className="Detail1 container-fluid d-flex justify-content-center">
-                <div className="cardDetail1 mb-3 d-flex">
-                    <div className="cardDetail2 row g-0">
-                        <div className="col-md-4">
+            <div className=" container-fluid d-flex justify-content-center">
+                <div className=" mb-3 d-flex">
+                    <div className=" row g-0">
+                        <div className="col-md-4 card-view">
                             <img
                                 src={"https://starwars-visualguide.com/assets/img/characters/" +
                                     params.uid + ".jpg"}
-                                className="img-fluid"
-                                alt="..."
+                                className="img-fluid img-view-detail"
+                                alt="character" onError={(e) => e.currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"}
                             />
                         </div>
                         <div className="col-md-8">
-                            <div className="card-body">
+                            <div className="card-pharagrap">
                                 <h2 className="card-title">{store.characterDetail?.name}</h2>
-                                <p className="text">
+                                <p className="pharagrap">
                                     Star Wars, conocida también en español como La guerra de las galaxias,
                                     es una franquicia y universo compartido de fantasía compuesta primordialmente
                                     de una serie de películas concebidas por el cineasta estadounidense George Lucas
@@ -50,30 +50,32 @@ const CardCharacterDetail = (uid = 12) => {
                             </div>
                         </div>
                         <br />
-                        <div className="FooterDetail container-fluid">
-                            <div className="text">
-                                <p>Name</p>
-                                <p>{store.characterDetail?.name}</p>
-                            </div>
-                            <div className="text">
-                                <p>Birth Year</p>
-                                <p>{store.characterDetail?.birth_year}</p>
-                            </div>
-                            <div className="text">
-                                <p>Gender</p>
-                                <p>{store.characterDetail?.gender}</p>
-                            </div>
-                            <div className="text">
-                                <p>Height</p>
-                                <p>{store.characterDetail?.height}</p>
-                            </div>
-                            <div className="text">
-                                <p>Skin Color</p>
-                                <p>{store.characterDetail?.skin_color}</p>
-                            </div>
-                            <div className="text">
-                                <p>Eye Color</p>
-                                <p>{store.characterDetail?.eye_color}</p>
+                        <div className="container-fluid">
+                            <div className="info">
+                                <div className="text">
+                                    <p>Name</p>
+                                    <p>{store.characterDetail?.name}</p>
+                                </div>
+                                <div className="text">
+                                    <p>Birth Year</p>
+                                    <p>{store.characterDetail?.birth_year}</p>
+                                </div>
+                                <div className="text">
+                                    <p>Gender</p>
+                                    <p>{store.characterDetail?.gender}</p>
+                                </div>
+                                <div className="text">
+                                    <p>Height</p>
+                                    <p>{store.characterDetail?.height}</p>
+                                </div>
+                                <div className="text">
+                                    <p>Skin Color</p>
+                                    <p>{store.characterDetail?.skin_color}</p>
+                                </div>
+                                <div className="text">
+                                    <p>Eye Color</p>
+                                    <p>{store.characterDetail?.eye_color}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

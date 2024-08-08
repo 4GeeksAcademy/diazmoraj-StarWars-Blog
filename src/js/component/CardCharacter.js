@@ -15,7 +15,7 @@ const CardCharacter = ({ name, uid }) => {
                 src={"https://starwars-visualguide.com/assets/img/characters/" +
                     uid + ".jpg"}
                 className="card-img-top img-view" 
-                alt="character" onerror="this.onerror=null; this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg';" />
+                alt="character" onError={(e) => e.currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"} />
             <div className="card-body info-card">
                 <h5 className="card-title neon-text">{name}</h5>
                 <div className="icons d-flex justify-content-between">

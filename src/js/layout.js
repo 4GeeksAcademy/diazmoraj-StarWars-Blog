@@ -31,8 +31,8 @@ const Layout = () => {
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 						<Route path="/CardCharacterDetail/:uid" element={<CardCharacterDetail/>}></Route>
-						{/* <Route path="/CardPlanetDetail/:uid" element={<CardPlanetDetail/>}></Route>
-						<Route path="/CardStarshipDetail/:uid" element={<CardStarshipDetail/>}></Route> */}
+						<Route path="/CardPlanetDetail/:uid" element={<CardPlanetDetail/>}></Route>
+						<Route path="/CardStarshipDetail/:uid" element={<CardStarshipDetail/>}></Route>
 					</Routes>
 					<Footer />
 				</ScrollToTop>

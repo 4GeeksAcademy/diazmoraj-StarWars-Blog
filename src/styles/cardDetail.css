@@ -1,34 +1,32 @@
-.neon-text{
-    color: rgb(98, 0, 255);
-    text-shadow: 0 0 5px #0ff;
-    font-weight: bold;
-    text-align: center;
-    background-color: #333;
-    padding: 1rem;
-    border-radius: 10px;
-    text-align: right;
-}
-
-.info-card{
-    border: 2px solid rgb(130, 32, 168);
-    border-radius: 10px;
-    margin: 5px 0;
-    box-shadow: 0 0 10px rgb(0, 255, 255);
-    background-color: grey;
-    height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
 .card-view{
-    margin: 10px;
     background-color: grey;
-    margin-left: 8px;
+    width: 386px;
 }
 
-.img-view{
-    margin-top: 5px;
+.img-view-detail{
+    margin: 10px;
     border-radius: 5px;
     height: 500px;
+    width: 365px;
+}
+
+.pharagrap{
+    color: black;
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    text-align: justify;
+    width: 100%;
+    padding: 20px; 
+    
+}
+
+.info{
+    border-top: 2px solid black;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    margin-top: 20px;
+    padding: 10px;
+    flex: 1;
 }
