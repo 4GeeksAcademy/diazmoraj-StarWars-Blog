@@ -5,14 +5,12 @@ import getState from "../store/flux";
 import "../../styles/home.css"
 import "../../styles/cardDetail.css"
 
-const CardPlanetDetail = (uid = 12) => {
+const CardPlanetDetail = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    console.log(store)
-    const id = 1;
 
     useEffect(() => {
-        actions.getPlanetDetail(id);
+        actions.getPlanetDetail(params.uid);
     }, [])
 
     return (
@@ -33,7 +31,6 @@ const CardPlanetDetail = (uid = 12) => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-pharagrap">
-                                <h2 className="card-title">{store.planetDetail?.name}</h2>
                                 <p className="pharagrap">
                                     Star Wars, conocida también en español como La guerra de las galaxias,
                                     es una franquicia y universo compartido de fantasía compuesta primordialmente
@@ -54,27 +51,27 @@ const CardPlanetDetail = (uid = 12) => {
                             <div className="info">
                                 <div className="text">
                                     <p>Name</p>
-                                    <p>{store.planetDetail?.name}</p>
+                                    <p>{store.planetDetail?.properties?.name}</p>
                                 </div>
                                 <div className="text">
                                     <p>Terrain</p>
-                                    <p>{store.planetDetail?.terrain}</p>
+                                    <p>{store.planetDetail?.properties?.terrain}</p>
                                 </div>
                                 <div className="text">
                                     <p>Gravity</p>
-                                    <p>{store.planetDetail?.gravity}</p>
+                                    <p>{store.planetDetail?.properties?.gravity}</p>
                                 </div>
                                 <div className="text">
                                     <p>Diameter</p>
-                                    <p>{store.planetDetail?.diameter}</p>
+                                    <p>{store.planetDetail?.properties?.diameter}</p>
                                 </div>
                                 <div className="text">
                                     <p>Climate</p>
-                                    <p>{store.planetDetail?.climate}</p>
+                                    <p>{store.planetDetail?.properties?.climate}</p>
                                 </div>
                                 <div className="text">
                                     <p>Orbital Period</p>
-                                    <p>{store.planetDetail?.orbital_period}</p>
+                                    <p>{store.planetDetail?.properties?.orbital_period}</p>
                                 </div>
                             </div>
                         </div>

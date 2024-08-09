@@ -12,19 +12,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 		actions: {
 			// Use getActions to call a function within a fuction
 			getCharacters: () => {
-				const store = getStore()
+				
 				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/people/")
 					.then((response) => response.json())
 					.then((data) => {
-						setStore({characters: data.results})
+						setStore({ characters: data.results })
 					})
 					.catch(() => { })
 			},
 
 			getPlanets: () => {
-				const store = getStore()
+
 				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/planets/")
@@ -36,7 +36,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getStarships: () => {
-				const store = getStore()
+
 				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + "/starships/")
@@ -48,51 +48,54 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			getCharacterDetail: (uid) => {
-				console.log(uid, "hear")
-				const store = getStore()
+
 				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + `/people/${uid}`)
 					.then((response) => response.json())
 					.then((data) => {
-						setStore({ characterDetail: data.results })
+						setStore({ characterDetail: data.result })
 					})
 					.catch(() => { })
 			},
 
-			getPlanetDetail: (id) => {
-				const store = getStore()
+			getPlanetDetail: (uid) => {
+
 				const swapiURL = "https://www.swapi.tech/api"
 
-				fetch(swapiURL + `/planets/${id}`)
+				fetch(swapiURL + `/planets/${uid}`)
 					.then((response) => response.json())
 					.then((data) => {
-						setStore({ planetDetail: data.results })
+						setStore({ planetDetail: data.result })
 					})
 					.catch(() => { })
 			},
 
 			getStarshipDetail: (uid) => {
-				const store = getStore()
+
 				const swapiURL = "https://www.swapi.tech/api"
 
 				fetch(swapiURL + `/starships/${uid}`)
 					.then((response) => response.json())
 					.then((data) => {
-						setStore({ starshipDetail: data.results })
+						setStore({ starshipDetail: data.result })
 					})
 					.catch(() => { })
 			},
 
 			favorites: (Item) => {
 				let store = getStore();
-				setStore({...store, favorites:[...store.favorites, Item]});
+				const exist = store.favorites.some(favorite => favorite.name === Item.name);
+
+				if (!exist) {
+					setStore({ ...store, favorites: [...store.favorites, Item]});
+				}
 			},
 
 			delFavorite: (Item) => {
 				const store = getStore();
 				const updateFavorite = store.favorites.filter((favo) => favo !== Item);
-				setStore({favorites:updateFavorite});
+				setStore({ favorites: updateFavorite });
 			}
 		}
 	};

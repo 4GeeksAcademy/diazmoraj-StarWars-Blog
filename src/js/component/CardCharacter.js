@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext"
 import "bootstrap-icons/font/bootstrap-icons.css";
-import { Link, useActionData } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import "../../styles/card.css"
 
 const CardCharacter = ({ name, uid }) => {
     const { store, actions } = useContext(Context);
-    const handleFavorite = (item) => {
+    const handleFavorite = () => {
+        const item = { name, uid };
         actions.favorites(item);
     }
     return (
@@ -14,8 +15,8 @@ const CardCharacter = ({ name, uid }) => {
             <img
                 src={"https://starwars-visualguide.com/assets/img/characters/" +
                     uid + ".jpg"}
-                className="card-img-top img-view" 
-                alt="character" onError={(e) => e.currentTarget.src="https://starwars-visualguide.com/assets/img/placeholder.jpg"} />
+                className="card-img-top img-view"
+                alt="character" onError={(e) => e.currentTarget.src = "https://starwars-visualguide.com/assets/img/placeholder.jpg"} />
             <div className="card-body info-card">
                 <h5 className="card-title neon-text">{name}</h5>
                 <div className="icons d-flex justify-content-between">
@@ -27,8 +28,9 @@ const CardCharacter = ({ name, uid }) => {
                     <button
                         type="button"
                         className="btn btn-outline-warning btn-sm"
-                        onClick={() => handleFavorite(name)}
+                        onClick={handleFavorite}
                     >
+                        <i className="fas fa-heart"></i>
                     </button>
                 </div>
             </div>

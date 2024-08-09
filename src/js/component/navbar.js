@@ -8,7 +8,7 @@ export const Navbar = () => {
 	const {store, actions} = useContext(Context);
 
 	return (
-		<nav className="navbar navbar-light bg-light mb-3">
+		<nav className="navbar navbar-light mb-3">
 			<div className="container">
 				<Link to="/">
 					<span className="navbar-brand mb-0 h1">
@@ -23,7 +23,7 @@ export const Navbar = () => {
 				<div className="ml-auto">
 					<div className="dropdown">
 						<a
-							className="btn btn-primary dropdown-toggle"
+							className="btn btn-secondary dropdown-toggle"
 							href="#"
 							role="button"
 							data-bs-toggle="dropdown"
@@ -38,7 +38,7 @@ export const Navbar = () => {
 										>
 											{Item.name}
 											<i 
-												className="bi bi-trash-fill borrar-favorito"
+												className={"fa fa-trash"}
 												onClick={() => actions.delFavorite(Item)}
 											></i>
 										</a>

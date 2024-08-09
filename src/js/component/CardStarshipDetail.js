@@ -8,11 +8,10 @@ import "../../styles/cardDetail.css"
 const CardStarshipDetail = (uid = 12) => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    console.log(store)
-    const id = 1;
+
 
     useEffect(() => {
-        actions.getStarshipDetail(id);
+        actions.getStarshipDetail(params.uid);
     }, [])
 
     return (
@@ -33,7 +32,6 @@ const CardStarshipDetail = (uid = 12) => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-pharagrap">
-                                <h2 className="card-title">{store.starshipDetail?.name}</h2>
                                 <p className="pharagrap">
                                     Star Wars, conocida también en español como La guerra de las galaxias,
                                     es una franquicia y universo compartido de fantasía compuesta primordialmente
@@ -54,27 +52,27 @@ const CardStarshipDetail = (uid = 12) => {
                             <div className="info">
                                 <div className="text">
                                     <p>Name</p>
-                                    <p>{store.starshipDetail?.name}</p>
+                                    <p>{store.starshipDetail?.properties?.name}</p>
                                 </div>
                                 <div className="text">
                                     <p>Passengers</p>
-                                    <p>{store.starshipDetail?.passengers}</p>
+                                    <p>{store.starshipDetail?.properties?.passengers}</p>
                                 </div>
                                 <div className="text">
                                     <p>Crew</p>
-                                    <p>{store.starshipDetail?.crew}</p>
+                                    <p>{store.starshipDetail?.properties?.crew}</p>
                                 </div>
                                 <div className="text">
                                     <p>Starship Class</p>
-                                    <p>{store.starshipDetail?.starship_class}</p>
+                                    <p>{store.starshipDetail?.properties?.starship_class}</p>
                                 </div>
                                 <div className="text">
                                     <p>Model</p>
-                                    <p>{store.starshipDetail?.model}</p>
+                                    <p>{store.starshipDetail?.properties?.model}</p>
                                 </div>
                                 <div className="text">
                                     <p>Manufacturer</p>
-                                    <p>{store.starshipDetail?.manufacturer}</p>
+                                    <p>{store.starshipDetail?.properties?.manufacturer}</p>
                                 </div>
                             </div>
                         </div>

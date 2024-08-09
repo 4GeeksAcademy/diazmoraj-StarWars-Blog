@@ -13,7 +13,7 @@ export const Home = () => {
 	return (
 		<div className="text-center mt-5">
 			{store.characters.length == 0
-				? <h1>Cargando...</h1>
+				? <h1></h1>
 				:
 				<div>
 					<div className="row">

@@ -5,14 +5,12 @@ import getState from "../store/flux";
 import "../../styles/home.css"
 import "../../styles/cardDetail.css"
 
-const CardCharacterDetail = (uid = 12) => {
+const CardCharacterDetail = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    console.log(store)
-    const id = 1;
 
     useEffect(() => {
-        actions.getCharacterDetail(id);
+        actions.getCharacterDetail(params.uid);
     }, [])
 
     return (
@@ -33,7 +31,6 @@ const CardCharacterDetail = (uid = 12) => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-pharagrap">
-                                <h2 className="card-title">{store.characterDetail?.name}</h2>
                                 <p className="pharagrap">
                                     Star Wars, conocida también en español como La guerra de las galaxias,
                                     es una franquicia y universo compartido de fantasía compuesta primordialmente
@@ -54,27 +51,27 @@ const CardCharacterDetail = (uid = 12) => {
                             <div className="info">
                                 <div className="text">
                                     <p>Name</p>
-                                    <p>{store.characterDetail?.name}</p>
+                                    <p>{store.characterDetail?.properties?.name}</p>
                                 </div>
                                 <div className="text">
                                     <p>Birth Year</p>
-                                    <p>{store.characterDetail?.birth_year}</p>
+                                    <p>{store.characterDetail?.properties?.birth_year}</p>
                                 </div>
                                 <div className="text">
                                     <p>Gender</p>
-                                    <p>{store.characterDetail?.gender}</p>
+                                    <p>{store.characterDetail?.properties?.gender}</p>
                                 </div>
                                 <div className="text">
                                     <p>Height</p>
-                                    <p>{store.characterDetail?.height}</p>
+                                    <p>{store.characterDetail?.properties?.height}</p>
                                 </div>
                                 <div className="text">
                                     <p>Skin Color</p>
-                                    <p>{store.characterDetail?.skin_color}</p>
+                                    <p>{store.characterDetail?.properties?.skin_color}</p>
                                 </div>
                                 <div className="text">
                                     <p>Eye Color</p>
-                                    <p>{store.characterDetail?.eye_color}</p>
+                                    <p>{store.characterDetail?.properties?.eye_color}</p>
                                 </div>
                             </div>
                         </div>
